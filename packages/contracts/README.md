@@ -1,4 +1,4 @@
-# Nester Soroban Contracts Workspace
+# Sitel-Tech Soroban Contracts Workspace
 
 Production-grade, scalable Cargo workspace for Soroban smart contracts supporting multi-contract architecture, shared libraries, and unified tooling.
 
@@ -126,11 +126,11 @@ Deploys all contracts to Stellar testnet (requires proper network configuration)
 
    [dependencies]
    soroban-sdk = { workspace = true }
-   nester-common = { path = "../../libs/common" }
+   Sitel-Tech-common = { path = "../../libs/common" }
 
    [dev-dependencies]
    soroban-sdk = { workspace = true, features = ["testutils"] }
-   nester-test-utils = { path = "../../libs/test_utils" }
+   Sitel-Tech-test-utils = { path = "../../libs/test_utils" }
    ```
 
 3. Create `src/lib.rs` with your contract implementation:
@@ -167,11 +167,11 @@ Deploys all contracts to Stellar testnet (requires proper network configuration)
 
 ### Using Shared Libraries
 
-All contracts can import from `nester-common` and `nester-test-utils`:
+All contracts can import from `Sitel-Tech-common` and `Sitel-Tech-test-utils`:
 
 ```rust
-use nester_common::{ContractError, constants::*, storage::*};
-use nester_test_utils::{setup_test_env, assert_ok};
+use Sitel-Tech_common::{ContractError, constants::*, storage::*};
+use Sitel-Tech_test_utils::{setup_test_env, assert_ok};
 ```
 
 ## Contract Descriptions
@@ -192,7 +192,7 @@ Dynamic allocation contract that determines how vault assets are distributed acr
 Granular role-based access control shared by every contract: `Admin`, `Operator`, `Manager`, `Guardian`, `Upgrader`, `Attester`, `FeeManager`, `RebalanceKeeper`, `Treasurer`, `VaultCreator`. Every role transfer is two-step (`transfer_role`/`accept_role`, cancellable) and roles can be time-bounded via `grant_role_until`. Full role model and the Guardian asymmetry guarantee — a Guardian can always make the protocol safer and never riskier — are documented in [`SECURITY.md`](../../SECURITY.md#on-chain-access-control-model-issue-820).
 
 ### Vault Factory (`vault_factory/`)
-Deploys new vaults from a single governed WASM hash via the Soroban deployer, with deterministic, pre-computable addresses (`predict_vault_address`) and an on-chain registry (`is_nester_vault`, `get_vault`, `list_vaults`) so any integrator can distinguish a genuine Nester vault from a lookalike. Deployment and initialisation are atomic. Changing the WASM hash goes through the shared `timelock`.
+Deploys new vaults from a single governed WASM hash via the Soroban deployer, with deterministic, pre-computable addresses (`predict_vault_address`) and an on-chain registry (`is_Sitel-Tech_vault`, `get_vault`, `list_vaults`) so any integrator can distinguish a genuine Sitel-Tech vault from a lookalike. Deployment and initialisation are atomic. Changing the WASM hash goes through the shared `timelock`.
 
 ### Referral (`referral/`)
 Standalone on-chain referral program — deliberately kept out of the vault's hot path; the vault is the sole trusted caller of `accrue_reward`, mirroring the existing `treasury.receive_fees` trust pattern. Rewards accrue from the protocol's performance-fee slice on a referred user's yield — never from the user's own returns — and are bounded by minimum deposit/tenure gates, per-referrer caps, and a global program budget. See [`EVENTS.md`](EVENTS.md#referral-events-contract-symbol-referral--issue-818) for the full event surface.
@@ -207,10 +207,10 @@ Standalone on-chain referral program — deliberately kept out of the vault's ho
 
 ## Error Handling
 
-All contracts use standardized error types from `nester_common::ContractError`:
+All contracts use standardized error types from `Sitel-Tech_common::ContractError`:
 
 ```rust
-use nester_common::ContractError;
+use Sitel-Tech_common::ContractError;
 
 pub enum ContractError {
     AlreadyInitialized,
@@ -227,10 +227,10 @@ pub enum ContractError {
 
 ## Storage Patterns
 
-Storage keys are defined in `nester_common::storage`:
+Storage keys are defined in `Sitel-Tech_common::storage`:
 
 ```rust
-use nester_common::storage::*;
+use Sitel-Tech_common::storage::*;
 
 admin_key()           // Access control admin
 balance_key(account)  // User balance storage
@@ -246,7 +246,7 @@ The workspace includes test utilities in `libs/test_utils`:
 ```rust
 #[cfg(test)]
 mod tests {
-    use nester_test_utils::*;
+    use Sitel-Tech_test_utils::*;
     use super::*;
 
     #[test]
@@ -276,7 +276,7 @@ mod tests {
 
 ## Contract Upgrade Runbook
 
-All upgradeable Nester contracts (`vault`, `yield_registry`, `allocation_strategy`, `treasury`) use a secure, timelock-governed upgrade mechanism.
+All upgradeable Sitel-Tech contracts (`vault`, `yield_registry`, `allocation_strategy`, `treasury`) use a secure, timelock-governed upgrade mechanism.
 
 ### 1. Reproducible Build Process
 Compile and optimize contract WASM binaries:

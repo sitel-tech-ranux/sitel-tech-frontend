@@ -1,8 +1,8 @@
-# Nester
+# Sitel-Tech
 
 **Decentralized Savings & Yield Investment Protocol**
 
-Nester is a crypto-first savings and investment app on Stellar. Deposits are diversified across multiple on-chain yield sources, tracked in a live portfolio, and grown with automated recurring deposits — self-custodial from end to end.
+Sitel-Tech is a crypto-first savings and investment app on Stellar. Deposits are diversified across multiple on-chain yield sources, tracked in a live portfolio, and grown with automated recurring deposits — self-custodial from end to end.
 
 > Your keys. Your yield. Your portfolio.
 
@@ -12,7 +12,7 @@ Nester is a crypto-first savings and investment app on Stellar. Deposits are div
 
 Holding stablecoins today means choosing between two bad options: let your money sit idle losing value to inflation, or navigate the complex world of DeFi protocols yourself — juggling pools, APYs, and rebalancing by hand.
 
-Nester turns that into one decision: pick a risk profile, deposit, and let the protocol do the work.
+Sitel-Tech turns that into one decision: pick a risk profile, deposit, and let the protocol do the work.
 
 ---
 
@@ -64,7 +64,7 @@ Savings goals sit on top: set a target, attach a schedule, watch streaks and mil
 
 ## Security Model
 
-Nester is non-custodial. Users maintain full ownership of assets through smart contracts—the protocol cannot freeze, seize, or redirect funds.
+Sitel-Tech is non-custodial. Users maintain full ownership of assets through smart contracts—the protocol cannot freeze, seize, or redirect funds.
 
 **Audit Status:** [Audit package and report](/audits)
 
@@ -96,8 +96,8 @@ The fastest way to run the full stack locally is Docker Compose. You only need D
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/suncrestlabs/nester.git
-cd nester
+git clone https://github.com/suncrestlabs/Sitel-Tech.git
+cd Sitel-Tech
 cp .env.example .env
 ```
 
@@ -137,10 +137,10 @@ make dev-reset   # wipe volumes and restart fresh
 ```bash
 make dev-db
 # or
-docker compose exec postgres psql -U nester nester_dev
+docker compose exec postgres psql -U Sitel-Tech Sitel-Tech_dev
 ```
 
-Test credentials: user `550e8400-e29b-41d4-a716-446655440001` / `testuser@nester.dev`.
+Test credentials: user `550e8400-e29b-41d4-a716-446655440001` / `testuser@Sitel-Tech.dev`.
 
 ### Health endpoints
 
@@ -187,9 +187,9 @@ The dev stack uses placeholder credentials committed in the repository:
 
 | Service    | User     | Password                                     | Context                        |
 | ---------- | -------- | -------------------------------------------- | ------------------------------ |
-| PostgreSQL | `nester` | `nester_dev_password`                        | Development only, known-bad    |
+| PostgreSQL | `Sitel-Tech` | `Sitel-Tech_dev_password`                        | Development only, known-bad    |
 | Redis      | (none)   | (none)                                       | No authentication in dev       |
-| JWT Secret | (varies) | `dev-nester-jwt-secret-change-in-production` | Rejected by production startup |
+| JWT Secret | (varies) | `dev-Sitel-Tech-jwt-secret-change-in-production` | Rejected by production startup |
 
 **These are development placeholders, never for production use.** The API's startup validation explicitly rejects the dev JWT secret in production (see `internal/config/config.go`).
 
@@ -231,7 +231,7 @@ See [SECURITY.md](/SECURITY.md) and the [deployment docs](/deploy) for productio
 
 ## How to Contribute
 
-Nester is being built in the open. We welcome contributions from developers, designers, researchers, and DeFi enthusiasts.
+Sitel-Tech is being built in the open. We welcome contributions from developers, designers, researchers, and DeFi enthusiasts.
 
 ### Getting Started
 
@@ -272,18 +272,18 @@ Follow existing patterns and conventions in the codebase. Write tests for new fu
 
 ### Contact
 
-- **GitHub:** [github.com/suncrestlabs/nester](https://github.com/suncrestlabs/nester)
-- **Twitter:** [@TheNesterHQ](https://x.com/TheNesterHQ)
+- **GitHub:** [github.com/suncrestlabs/Sitel-Tech](https://github.com/suncrestlabs/Sitel-Tech)
+- **Twitter:** [@TheSitel-TechHQ](https://x.com/TheSitel-TechHQ)
 
 ---
 
 ## Links
 
-- [Website](https://nesterhq.netlify.app/)
-- [GitHub](https://github.com/suncrestlabs/nester)
+- [Website](https://Sitel-Techhq.netlify.app/)
+- [GitHub](https://github.com/suncrestlabs/Sitel-Tech)
 
 ---
 
 **Built by [Suncrest Labs](https://suncrestlabs.com)**
 
-_Nester is in active development. Features and specifications may change._
+_Sitel-Tech is in active development. Features and specifications may change._

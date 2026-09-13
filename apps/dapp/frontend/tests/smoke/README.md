@@ -1,16 +1,16 @@
-# Nester Smoke Test Suite
+# Sitel-Tech Smoke Test Suite
 
 Full-stack smoke tests for gating deployment to staging/production. These tests verify the critical happy path: user registration, wallet connection, deposit, balance updates, withdrawal, and settlement.
 
-**GitHub Issue**: [#1116 - test(repo): full-stack smoke test gating every deploy](https://github.com/suncrest-labs/nester/issues/1116)
+**GitHub Issue**: [#1116 - test(repo): full-stack smoke test gating every deploy](https://github.com/suncrest-labs/Sitel-Tech/issues/1116)
 
 ## Quick Start
 
 ### Run Locally (Development)
 
 ```bash
-# Terminal 1: Start the full Nester stack
-cd nester
+# Terminal 1: Start the full Sitel-Tech stack
+cd Sitel-Tech
 make dev
 
 # Terminal 2: Run smoke tests once
@@ -123,7 +123,7 @@ NEXT_PUBLIC_VAULT_TOKEN_CONTRACT_ID=C...
 CI/Staging (via GitHub Actions secrets):
 ```bash
 SMOKE_TEST_WALLET_SECRET=S... # Testnet keypair seed
-STAGING_URL=https://staging.nester.dev
+STAGING_URL=https://staging.Sitel-Tech.dev
 STAGING_API_KEY=sk_...
 FAUCET_API_KEY=... # If using private faucet instead of Friendbot
 ```
@@ -183,7 +183,7 @@ Each run produces artifacts:
     {
       "name": "register",
       "status": "PASS",
-      "message": "Account created: smoke-1692700000000@test.nester.dev",
+      "message": "Account created: smoke-1692700000000@test.Sitel-Tech.dev",
       "durationMs": 4200,
       "txHash": null
     },
@@ -314,8 +314,8 @@ If smoke tests fail:
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/suncrest-labs/nester.git
-cd nester
+git clone https://github.com/suncrest-labs/Sitel-Tech.git
+cd Sitel-Tech
 pnpm install
 
 # 2. Start stack
@@ -433,7 +433,7 @@ For issues or questions about the smoke tests:
 1. Check this README and the runbook first
 2. Open a GitHub issue with the `smoke-test` label
 3. Include `smoke-result.json` and Playwright report if available
-4. Contact the platform team in `#nester-dev` Slack channel
+4. Contact the platform team in `#Sitel-Tech-dev` Slack channel
 
 ---
 

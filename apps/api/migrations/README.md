@@ -1,6 +1,6 @@
 # Migration Runbook
 
-This directory contains [golang-migrate](https://github.com/golang-migrate/migrate) SQL migration files for the Nester API database.
+This directory contains [golang-migrate](https://github.com/golang-migrate/migrate) SQL migration files for the Sitel-Tech API database.
 
 ## Running Migrations
 
@@ -77,7 +77,7 @@ After deploying migration `009_add_user_roles`, **all existing admin JWT tokens 
 ## Known Issues
 
 None currently. The prefix collisions previously recorded here (007, 009, 010 —
-[#523](https://github.com/Suncrest-Labs/nester/issues/523)) and the later set at
-060, 061, 069, 070 and 081 ([#995](https://github.com/Suncrest-Labs/nester/issues/995))
+[#523](https://github.com/Suncrest-Labs/Sitel-Tech/issues/523)) and the later set at
+060, 061, 069, 070 and 081 ([#995](https://github.com/Suncrest-Labs/Sitel-Tech/issues/995))
 have all been resolved. CI enforces uniqueness on every push.
 - There are gaps in the sequence at 004 and 013 — these are expected (migrations were removed) and do not affect operation.
